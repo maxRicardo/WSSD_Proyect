@@ -1,0 +1,29 @@
+# To extract and count the seq inside the pack
+# just extract them as zip file and then 
+# concatenate them. Once concatenated just 
+# extract each line marked with ">" icon 
+# and count the number of the resulting lines.
+
+
+
+// extract 
+unzip "filename"
+
+//concatenate the files 
+cat filename1 filename2 filename 3 ..... filenameN > cat_output.txt
+
+//extract the lines and count them 
+grep \> cat_output.txt | wc -l > number_of_lines.txt
+
+
+// Inside the "number_of_lines" file there will be a number 
+// that represent the number of total seq present in the 
+// whole pack that we download.
+
+
+
+//Example :
+
+unzip fasta.bos_taurus.*
+cat fasta.bos_taurus.* > fasta.cat_bos_taurus.txt
+grep \> fasta.cat_bos_taurus.txt | wc -l > number_fasta_seq_bos_taurus.txt
